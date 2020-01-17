@@ -18,7 +18,7 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = [
-        //
+    protected $except = [   
+        "https://postman-echo.com/post",
     ];
 }

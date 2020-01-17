@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,12 @@
 
 Route::get('/', function () {
     return view('welcome');
+})->name('welcome');
+
+Route::post('/', function () {
+    return view('welcome');
 });
+
+Route::get('/hh', function () {
+    return view('Test');
+})->name('test');
