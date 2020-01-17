@@ -23,7 +23,17 @@ Route::view('/hh', 'test')->name('test');
     'index','show'
 ); */
 
-Route::apiResource('photos','PhotoController')->except(
+/* Route::apiResource('photos','PhotoController')->except(
     'show','update','destroy'
+); */
+Route::resource('photos.comments', 'PhotoController')->except(
+    'update','destroy','store'
+)->names(
+    [
+        'index' => 'afficherPhotos',
+    ]
+)->parameters([
+    'photos'=>'admin',
+]
 );
 
