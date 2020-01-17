@@ -7,6 +7,6 @@
         <title>Laravel</title>
     </head>
     <body>
-        <h1> Wie geht est inhen </h1>
+        <h1> Wie geht est inhen  222</h1>
     </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/show','ShowProfile');
+
+Route::view('/', 'welcome')->name('welcome');
+
+Route::view('/hh', 'test')->name('test');
+
+/* Route::resource('photos', 'PhotoController')->only(
+    'index','show'
+); */
+
+Route::apiResource('photos','PhotoController')->except(
+    'show','update','destroy'
+);
+
