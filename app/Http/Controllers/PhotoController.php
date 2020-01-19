@@ -24,7 +24,40 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      //  dd($request->input('age'));
+      if($request->is('api/*')){
+
+        // dd($request->path());
+        // dd($request->fullurl());
+        // dd($request->url());
+      }
+     // dd($request->input('cat'));
+     //        dd($request->method());
+    /* if($request->isMethod('post')){
+       $data = $request->all();
+       dd($data);
+     } */
+    /* $lay = $request->input('name',$request->age);
+    dd($lay); */
+    // dd($request->input('names.*'));
+    // dd($request->input('produits.*.name'));
+    // dd($request->query());
+   // dd($request->only(['age','cat']));
+    /* if($request->has('age')){
+     dd($request->except('produits'));
+     } */
+
+  /*   if($request->filled('name')){
+       dd($request->age);
+     }
+     dd($request->cat); */
+
+    // $request->flash();
+     // dd($request->file('photo'));
+     if($request->file('photo')->isValid()){
+      // dd($request->photo->path());
+       dd($request->photo->extension());
+     }
     }
 
     /**
@@ -35,7 +68,6 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

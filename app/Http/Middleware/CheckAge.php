@@ -14,7 +14,7 @@ class CheckAge
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {   
+    {       
        if($request->age <= 80){
            
             return $next($request);

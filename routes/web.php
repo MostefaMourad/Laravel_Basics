@@ -26,7 +26,7 @@ Route::view('/hh', 'test')->name('test');
 /* Route::apiResource('photos','PhotoController')->except(
     'show','update','destroy'
 ); */
-Route::resource('photos.comments', 'PhotoController')->except(
+/* Route::resource('photos.comments', 'PhotoController')->except(
     'update','destroy','store'
 )->names(
     [
@@ -35,5 +35,7 @@ Route::resource('photos.comments', 'PhotoController')->except(
 )->parameters([
     'photos'=>'admin',
 ]
-);
+); */
+
+Route::resource('photos', 'PhotoController')->middleware('checkage');
 
