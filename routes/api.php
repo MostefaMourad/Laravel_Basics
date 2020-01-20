@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::resource('photos/{id}', 'PhotoController');
 
 Route::get('tests', function () {
+
+   $cookie=  Cookie::queue(Cookie::make('name','value',4));
     return response('hello Mec',200)
-                 ->header('Content-type','text/plain');
+                 ->header('Content-type','text/plain')
+                 ->header('X-header-one','val1')
+                 ->cookie('namea','value',5);
+
+
 });

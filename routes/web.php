@@ -37,5 +37,21 @@ Route::view('/hh', 'test')->name('test');
 ]
 ); */
 
-Route::resource('photos', 'PhotoController')->middleware('checkage');
+// Route::resource('photos', 'PhotoController@index');
+
+Route::get('photo/{id}','PhotoController@index')->name('test1');
+
+Route::view('hh', 'welcome')->name('welcome');
+
+Route::get('tests',function(){
+    // return redirect()->route('test1');
+    // return redirect()->away('https://www.google.com');
+    // return redirect()->route('welcome')->with('status','Bravo');
+    return response()->json([
+      'nom'=>'ahha',
+      'prenom' => 'lay lay'
+    ]);
+});
+
+// Route::view('test1','welcome')->name('test1');
 

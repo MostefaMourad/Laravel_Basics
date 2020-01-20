@@ -13,6 +13,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
+        
         dd("haaay haaaay");
     }
 
@@ -54,10 +55,11 @@ class PhotoController extends Controller
 
     // $request->flash();
      // dd($request->file('photo'));
-     if($request->file('photo')->isValid()){
+    /* if($request->file('photo')->isValid()){
       // dd($request->photo->path());
        dd($request->photo->extension());
-     }
+     } */
+
     }
 
     /**
