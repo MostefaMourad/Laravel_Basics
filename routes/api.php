@@ -18,4 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('photos/{id}', 'PhotoController');
+// Route::resource('photos/{id}', 'PhotoController');
+
+Route::get('tests', function () {
+    return response('hello Mec',200)
+                 ->header('Content-type','text/plain');
+});
