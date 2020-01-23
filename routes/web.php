@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,8 +83,19 @@ Route::get('view2', function () {
         dd('laay laay');
     }
 });
-Route::get('view3', function () {
+Route::get('view3', function (Request $request) {
+    if($request->hasValidSignature()){
     return view('welcome',['name'=>'mostefa']);
+    }
+})->name('view3');
+
+Route::get('url1', function () {
+    echo url()->current();
+    echo url()->previous(); 
+});
+
+Route::get('url2', function () {
+    return redirect()->route((URL::signedRoute('view3')));    
 });
 // Route::view('test1','welcome')->name('test1');
 
