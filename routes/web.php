@@ -71,5 +71,18 @@ Route::get('down',function(){
   
  return response()->file($file);
 });
+
+Route::get('view1', function () {
+    return view('welcome')->with('name','mostefa');
+});
+Route::get('view2', function () {
+    if(view()->exists('welcome'))
+    {
+        dd('laay laay');
+    }
+});
+Route::get('view3', function () {
+    return view('welcome',['name'=>'mostefa']);
+});
 // Route::view('test1','welcome')->name('test1');
 

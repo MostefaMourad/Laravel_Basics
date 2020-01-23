@@ -30,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
                 'create' => 'creer',
             ]
             );
+
+        view()->share('firstname','mostefaaa');    
     }
 }

@@ -7,7 +7,8 @@
         <title>Laravel</title>
     </head>
     <body>
+       <!-- <h1> Wie geht est inhen {{ session('status')}} </h1> -->
+       <h1>{{$firstname}}</h1>
 
-        <h1> Wie geht est inhen {{session('status')}} </h1>
     </body>
 </html>
