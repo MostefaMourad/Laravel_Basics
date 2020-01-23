@@ -65,5 +65,11 @@ Route::get('dow',function(){
     return response()->download($file, 'filename.pdf', $headers);
 });
 
+Route::get('down',function(){
+    //PDF file is stored under project/public/download/info.pdf
+ $file = public_path()."/download/file1.pdf";
+  
+ return response()->file($file);
+});
 // Route::view('test1','welcome')->name('test1');
 
