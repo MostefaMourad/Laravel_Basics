@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,17 @@ Route::get('tests',function(){
       'nom'=>'ahha',
       'prenom' => 'lay lay'
     ]);
+});
+
+Route::get('dow',function(){
+       //PDF file is stored under project/public/download/info.pdf
+    $file = public_path()."/download/file1.pdf";
+
+    $headers = array(
+              'Content-Type: application/pdf',
+            );
+
+    return response()->download($file, 'filename.pdf', $headers);
 });
 
 // Route::view('test1','welcome')->name('test1');
